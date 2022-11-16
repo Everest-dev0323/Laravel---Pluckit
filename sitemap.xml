@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+                <sitemap>
+                    <loc> https://pluckit.com.au/pages.xml</loc>
+                </sitemap>
+                <sitemap>
+                    <loc> https://pluckit.com.au/categories.xml</loc>
+                </sitemap>
+                <sitemap>
+                    <loc> https://pluckit.com.au/business.xml</loc>
+                </sitemap>
+    
+</sitemapindex>

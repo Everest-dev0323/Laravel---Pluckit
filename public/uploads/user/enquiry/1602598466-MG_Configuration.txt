@@ -1,0 +1,11 @@
+How to configure MG: --
+Navigate to Configuration>Sites>Trunks>Media Gateway, select the MG which you want to configure and follow below steps: --
+1.	On Properties tab, select E1 or TI which you want to configure and provide username/password as Admin/Admin
+2.	Now go to Media Gateway Maintenance tab and click on restore to defaults. After this MG will go on reboot. Let it come up and go to next step.
+3.	Now click on Retrieve to retrieve configurations.
+4.	Now click on "CAS File Management" tab . Move MRD,ARD and Hoot to "To be uploaded on MG" box and click on sync.
+5.	Once file sync completed, Under Module select "Slot 1- 2 Port  TDM" and under Port select "Port1".Under Port properties: Select protocol type as "E1 CAS" , Line Code as "HDB", Framing Method as "E1-FRAMING-MFF-CRC4. Keep the rest same as it is. Do same for Port2 as well.
+6.	Now select Channel 1 , In that select Connection type as "Private Line". Select CAS Pattern MRD or ARD or HOOT as per the line you want to associate. Then click save. Then under ResourceAOR associate line. If already created associate through existing and if now click on Add new and associate.
+7.	After this me can manually configure each channel for the kind of line we want configure ARD/MRD/HOOT. And then click on Apply to apply configuration and reboot. To reboot go to "Media Gateway Maintenance" tab and click on reboot.
+8.	Also channel association can be done using mass edit. To do this, Associate 1st ,11th and 22nd channel manually for ARD, MRD and HOOT after doing this click on "Apply". Then open mass edit seat. Navigate to Tools>Mass Edit>Trunk>CAS open Mass edit seat. In that change "connection type" to Private Line", fill "CAS Pattern ID  " for all added lines respectively and fill "Resource AOR" means line number which you want to associate with each channel. 
+After doing all this click on "Apply". And reboot MG

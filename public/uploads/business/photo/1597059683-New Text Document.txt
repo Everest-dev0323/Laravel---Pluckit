@@ -1,0 +1,12 @@
+Report:-(7-March-2020)
+Zylax-customer:-
+1.work for Take photo from camera in Reply page.
+2.after add image from camera or gellary delete,can delete unwanted image.
+3.Test Zylax-ticket image upload pages.
+=========================================================
+Pos Kotlin:-(17-March-2020)
+1.Solved "unresolved reference" Error in DashBoard and PayMent page.
+2.worked for Fix "Payment ERROR PERMISSION_FOR_REQUEST_FUNCTION_NOT_GRANTED" Error.
+Zylax-customer:-
+1.increase create icon size in ticket-list page.
+2.add new page for See Full-screen-imge and 

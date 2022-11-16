@@ -1,0 +1,1 @@
+Summary : Cloud - Sc - Community directory : User presence is not showing on the community directory app for any of the user 

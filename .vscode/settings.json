@@ -1,0 +1,22 @@
+{
+    "i18n-ally.localesPaths": [
+        "pmd/locale",
+        "resources/lang",
+        "public/assets/lib/summernote/lang",
+        "public/assets/plugins/summernote/lang",
+        "public/assets/plugins/tinymce/langs",
+        "public/front-assets/lib/summernote/lang",
+        "vendor_bkp/jorenvanhocht/laravel-share/resources/lang",
+        "vendor_bkp/laravel/cashier/resources/lang",
+        "vendor_bkp/scrivo/highlight.php/Highlight/languages",
+        "vendor_bkp25/jorenvanhocht/laravel-share/resources/lang",
+        "vendor_bkp25/laravel/cashier/resources/lang",
+        "vendor_bkp25/scrivo/highlight.php/Highlight/languages",
+        "vendor_bkp/symfony/intl/Resources/data/languages",
+        "vendor_bkp/symfony/intl/Resources/data/locales",
+        "vendor_bkp25/symfony/intl/Resources/data/languages",
+        "vendor_bkp25/symfony/intl/Resources/data/locales",
+        "vendor_bkp/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/locale",
+        "vendor_bkp25/phpoffice/phpspreadsheet/src/PhpSpreadsheet/Calculation/locale"
+    ]
+}

@@ -1,0 +1,416 @@
+body {margin: 0;padding:0;}
+@font-face {
+	font-family: "Montserrat-Regular";
+	src: url('../fonts/montserrat-regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Montserrat-Medium";
+	src: url('../fonts/montserrat-medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Montserrat-SemiBold";
+	src: url('../fonts/montserrat-semibold.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Montserrat-Bold";
+	src: url('../fonts/montserrat-bold.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Poppins-Regular";
+	src: url('../fonts/Poppins-Regular.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Poppins-Medium";
+	src: url('../fonts/Poppins-Medium.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Poppins-SemiBold";
+	src: url('../fonts/Poppins-SemiBold.ttf') format('truetype');
+}
+@font-face {
+	font-family: "Poppins-Bold";
+	src: url('../fonts/Poppins-Bold.ttf') format('truetype');
+}
+.slide-bg {
+	background: url('../images/top-bg.jpg') no-repeat bottom;
+	background-size: cover;
+	margin: 0;
+	padding: 200px 0;
+	display: block;
+	height: auto;
+	margin-bottom: 60px;
+}
+.slide-bg h1 {
+	font-family: "Montserrat-SemiBold", Arial;
+	font-size: 60px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+.slide-bg p {
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 30px;
+	color: #fff;
+	display: block;
+	text-align: center;
+}
+section {
+	display: block;
+	margin: 0;
+	padding: 30px 0;
+}
+.head-title {
+	position: relative;
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 42px;
+	color: #292929;
+	display: block;
+	text-align: center;
+	margin: 0;
+	padding: 15px 0;
+}
+.head-title span.line {
+	position: absolute;
+	bottom: 0;
+	left: 46%;
+	width: 8%;
+	height: 5px;
+	background-color: #eb503e;
+	display: block;
+}
+.head-title span {
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 24px;
+	color: #eb503e;
+	display: block;
+	margin-top: 18px;
+}
+.features {
+	display: block;
+	margin: 0;
+	padding: 0;
+}
+.features img {
+	max-width: 100%;
+	height: 80px;
+	display: block;
+	margin: 15px auto;
+}
+.features p span {
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 22px;
+	display: block;
+	color: #1a2b63;
+	text-align: center;
+	margin: 0 0 15px 0;
+	padding: 0;
+}
+.features p {
+	font-family: "Montserrat-Medium", Arial;
+	font-size: 16px;
+	color: rgba(26,43,99,.8);
+	text-align: center;
+	display: block;
+	line-height: 25px;
+}
+.bg-f9f8f8 {
+	background-color: #f9f8f8;
+}
+.steps {
+	display: flex;
+	margin: 30px 0;
+	padding: 0;
+	list-style: none;
+}
+.steps li {
+	display: inline-block;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	width: 33.3%;
+}
+.steps li:before {
+	content: '';
+	position: absolute;
+	top: 15%;
+	left: 52%;
+	width: 100%;
+	height: 4px;
+	background: url('../images/border.jpg') repeat-x;
+}
+.steps li:last-child:before {
+	display: none;
+}
+.steps li img {
+	max-width: 100%;
+	height: 80px;
+	display: block;
+	margin: 0 auto;
+	position: relative;
+}
+.steps li p span {
+	display: block;
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 22px;
+	color: #1a2b63;
+	text-align: center;
+	margin: 0 0 15px 0;
+}
+.steps li p {
+	display: block;
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 16px;
+	color: rgba(26,43,99,.8);
+	text-align: center;
+	margin: 0;
+	padding: 30px;
+	line-height: 25px;
+}
+.note {
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 16px;
+	color: #333;
+	text-align: center;
+	display: block;
+	margin: 15px 0;
+	padding: 0;
+	line-height: 32px;
+}
+.note span {
+	font-family: "Montserrat-SemiBold", Arial;
+}
+.theme-bg {
+	background-color: #eb503e;
+	display: block;
+	border-radius: 15px;
+	margin: 0;
+	padding: 60px 30px;
+}
+.theme-bg h2 {
+	display: block;
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 36px;
+	color: #fff;
+	text-align: center;
+	margin: 0 0 30px 0;
+	padding: 0;
+}
+.white-bg {
+	background-color: #fff;
+	display: block;
+	padding: 30px;
+	margin: 15px 0;
+	border-radius:15px;
+	font-family: "Poppins-Regular", Arial;
+	font-size: 16px;
+	color: #eb503e;
+	text-align: center;
+}
+.white-bg img {
+	max-width: 100%;
+	height: 120px;
+	display: block;
+	margin: 20px auto;
+}
+.white-bg span {
+	display: block;
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 24px;
+	margin: 0 0 15px 0;
+	padding: 0;
+	text-transform: uppercase;
+}
+.white-bg span.bold {
+	display: inline-block;
+	font-family: "Poppins-Bold", Arial;
+	font-size: 16px;
+}
+.theme-bg p {
+	display: block;
+	font-family: "Montserrat-Medium", Arial;
+	font-size: 24px;
+	color: #fff;
+	line-height: 40px;
+	margin: 15px 0;
+	padding: 0;
+	text-align: center;
+}
+.theme-btn {
+	background-color: #fff;
+	border-radius: 50px;
+	text-align: center;
+	display: inline-block;
+	margin: 0;
+	padding: 0 10px;
+}
+.theme-btn a {
+	font-family: "Montserrat-Bold", Arial;
+	font-size: 22px;
+	color: #eb503e;
+	text-align: center;
+	line-height: 70px;
+	text-decoration: none;
+}
+#accordionExample .card {
+	border: 0;
+}
+#accordionExample .card-header h2 button {
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 24px;
+	color: #333;
+	text-transform: none;
+	text-decoration: none;
+}
+#accordionExample .card-body p {
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 18px;
+	color: #333;
+}
+.collapsible-link {
+    width: 100%;
+    position: relative;
+    text-align: left;
+}
+.collapsible-link::before {
+    content: '\f107';
+    position: absolute;
+    top: 30%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    display: block;
+    font-family: 'FontAwesome';
+    font-size: 36px;
+    color: #eb503e;
+}
+
+.collapsible-link[aria-expanded='true']::before {
+    content: '\f106';
+}
+.bg-eb503e {
+	background-color: #eb503e;
+}
+.bg-eb503e h3 {
+	font-family: "Montserrat-SemiBold", Arial;
+	font-size: 42px;
+	color: #fff;
+	display: block;
+	text-align: center;
+	margin: 15px 0;
+	padding: 0;
+}
+#testimonial {
+	display: block;
+	margin: 30px 0;
+	padding: 0;
+}
+#testimonial p {
+	font-family: "Montserrat-Regular", Arial;
+	font-size: 16px;
+	color: #000;
+	text-align: center;
+	display: block;
+	margin: 30px 0 0 0;
+	padding: 0 120px;
+	line-height: 30px;
+	height: 60px;
+}
+#testimonial h4 {
+	display: block;
+	font-family: "Poppins-SemiBold", Arial;
+	font-size: 18px;
+	color: #000;
+	text-align: center;
+	margin: 15px 0;
+	padding: 0;
+}
+#testimonial .carousel-indicators {
+	bottom: -30px;
+}
+#testimonial .carousel-indicators li {
+	background-color: rgba(62, 62, 62, 0.3);
+}
+#testimonial .carousel-indicators .active {
+	background-color: #eb503e!important;
+}
+#testimonial .carousel-inner {
+	width: auto;
+}
+#testimonial .carousel-control-next, #testimonial  .carousel-control-prev {
+	color: #eb503e;
+	opacity: 1;
+	font-size: 24px;
+}
+@media (max-width: 590px) {
+	.slide-bg {
+		padding: 100px 0;
+		margin-bottom: 30px;
+	}
+	.slide-bg h1 {
+		font-size: 30px;
+	}
+	.slide-bg p {
+		font-size: 12px;
+	}
+	.head-title {
+		font-size: 24px;
+	}
+	.head-title span {
+		font-size: 16px;
+	}
+	.steps {
+		display: block;
+	}
+	.steps li {
+		width: 100%;
+	}
+	.steps li:before {
+		display: none;
+	}
+	.theme-bg {
+		padding: 60px 15px;
+	}
+	.theme-bg h2 {
+		font-size: 24px;
+		margin: 0 0 15px 0;
+	}
+	.theme-bg p {
+		font-size: 16px;
+		line-height: 24px;
+		margin: 15px 0;
+	}
+	#accordionExample .card-header h2 button {
+		font-size: 14px;
+	}
+	.p-5 {
+		padding: 1rem!important;
+	}
+	.bg-eb503e h3 {
+		font-size: 21px;
+	}
+	.theme-btn {
+		display: block;
+	}
+	.theme-btn a {
+		font-size: 18px;
+		font-weight: 500;
+	}
+	.white-bg img {
+		height: 72px;
+	}
+	#testimonial p {
+    font-size: 14px!important;
+    padding: 0 60px!important;
+    height: 200px!important;
+  }
+	.accordion .card-header .btn-link {
+		font-size: 14px;
+	}
+	#accordionExample .card-body p {
+		font-size: 14px;
+	}
+}
+@media (max-width: 320px) {
+	.theme-btn a {
+		font-size: 14px;
+	}
+}

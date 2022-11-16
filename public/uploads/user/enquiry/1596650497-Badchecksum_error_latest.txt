@@ -1,0 +1,31 @@
+bash-4.2$ tail -f /tmp/ocd_monitor.sh.log
+---- Fri Jul 24 11:34:13 UTC 2020 cron 2754 ----
+---- Fri Jul 24 11:36:09 UTC 2020 cron 3027 ----
+11:37:08 ocd_monitor.sh: '/var/spool/backup/OneClick' does have 52 GB, more than the required 10 GB
+11:37:08 ocd_monitor.sh: '/tmp/' does have 4 GB, more than the required 1 GB
+11:37:08 ocd_monitor.sh: '/var/spool/backup/OneClick' does have 52 GB, more than the required 10 GB
+11:37:08 ocd_monitor.sh: '/tmp/' does have 4 GB, more than the required 1 GB
+11:37:09 ocd_monitor.sh: Partial md5sum for /tmp/dunkin_04.03.00.01.0005.iso = d42981a723f442cd854fa94ed9c715d0
+11:37:13 ocd_monitor.sh: The ISO /tmp/dunkin_04.03.00.01.0005.iso apear to be 04.03.00.01.0005 APP ISO ...
+11:37:13 ocd_monitor.sh: The /tmp/dunkin_04.03.00.01.0005.iso does apear to be a APP ISO ...
+---- Fri Jul 24 11:38:04 UTC 2020 cron 3121 ----
+---- Fri Jul 24 11:40:05 UTC 2020 cron 3238 ----
+858270+1 records in
+858270+1 records out
+1757738300 bytes (1.8 GB) copied, 253.629 s, 6.9 MB/s
+-rw-r--r--. 1 tomcat tomcat 1757738300 Jul 24 11:41 /var/spool/backup/OneClick/images/cop.iso
+11:41:28 ocd_monitor.sh: Bad partial signature, Abort ...
+11:41:29 ocd_monitor.sh: bad checksum
+deque APP http://100.64.152.200/shares/export/dunkin_scm/builds/int_nightly_ga_unigy_v4.3_patch1_full/04.03.00.01.0005/appliance/obj/iso/dunkin_04.03.00.01.0005.iso UI_req
+---- Fri Jul 24 11:41:29 UTC 2020 pid 108 return to cron nap
+
+---- Fri Jul 24 11:42:05 UTC 2020 cron 3338 ----
+210
+Removing older ISO /tmp/dunkin_04.03.00.01.0005.iso
+DB status: Database connection is good
+---- Fri Jul 24 11:42:09 UTC 2020 pid 3338 return to cron nap
+
+---- Fri Jul 24 11:44:04 UTC 2020 cron 3404 ----
+212
+DB status: Database connection is good
+---- Fri Jul 24 11:44:06 UTC 2020 pid 3404 return to cron nap
