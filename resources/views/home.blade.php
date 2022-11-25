@@ -1,0 +1,552 @@
+@extends('layouts.front-end.app')
+
+@section('content')
+<!-- Banner -->
+<div id="banner" class="overlay">
+    <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/banner.jpg" alt="">
+    <div class="description absolute-center">
+     <div class="container home-search">
+	   <h1>Find a Pluckin’ Tradie. <br class="d-md-block d-none">Recommended Tradies from people you know</h1>
+		<form class="form" method="get" action="{{ url('/search')}}" id="search_form" onsubmit="return false">
+		  <ul class="list-unstyled clearfix">
+			<li class="categories">
+				<input type="text" class="form-control" id="categories" name="cat" placeholder="Search for an Electrician, a Plumber, etc." value="{{ !empty($get['cat']) ? $get['cat'] : '' }}">
+				  <span class="loader loader-category d-none">
+					<i class="fa fa-spin fa-spinner"></i>
+				  </span>
+				</li>
+			<li class="location">
+			  <input type="text" class="form-control" id="location" name="loc" placeholder="Suburb or postcode" value="{{ !empty($get['loc']) ? $get['loc'] : '' }}">
+			  <span class="loader loader-location d-none">
+				  <i class="fa fa-spin fa-spinner"></i>
+			  </span>
+			</li>
+			<li>
+			<input type="hidden" name="near_postcode" id="near_postcode" value="50">
+
+			</li>
+			<li>
+			<input type="hidden" name="hid_type" id="hid_type" value="{{ !empty($get['hid_type']) ? $get['hid_type'] : '' }}">
+			<input type="hidden" name="parent_cat" id="parent_cat" value="{{ !empty($get['parent_cat']) ? $get['parent_cat'] : '' }}">
+			<input type="hidden" name="catval" id="catval" value="{{ !empty($get['catval']) ? $get['catval'] : '' }}">
+			<button type="submit" class="btn btn-primary search_button">See Recommendations</button></li>
+		  </ul>
+		</form>
+		</div>
+    </div>
+    <div class="footer-text text-center d-none d-md-block">
+      <div class="container position-relative">
+        <p class="d-md-inline-block mb-md-0"><strong>For Tradies - Claim Your Business </strong></p>
+        <a href="{{ url('business/user/signup') }}" class="btn btn-primary ml-md-3">START NOW</a>
+      </div>
+    </div>
+  </div>
+  <!-- /Banner -->
+  <!-- Content -->
+  <div id="content" class="pt-0">
+    <!-- Section -->
+    <section class="section bg-gray-light featured-services">
+      <div class="container">
+        <div class="row">
+          <div class="col-sm-6 col-lg-3">
+            <div class="media">
+             <figure class="figure">
+               <img class="img-fluid align-self-center" src="{{ ('/public') }}/front-assets/images/icon/shield-check.png" alt="shield-check
+              "></figure>
+              <div class="media-body">
+                <h5 class="mb-1">Verified Tradies</h5>
+                <p class="mb-0">And Verified Users</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="media align-items-start">
+            <figure class="figure">
+              <img class="img-fluid align-self-center" src="{{ ('/public') }}/front-assets/images/icon/recommendations.png" alt="shield-check
+              ">
+            </figure>
+              <div class="media-body">
+                <h5 class="mb-1">Friend Recommendations</h5>
+                <p class="mb-0">Helps You Decide</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="media">
+            <figure class="figure">
+              <img class="img-fluid align-self-center" src="{{ ('/public') }}/front-assets/images/icon/pencil.png" alt="shield-check
+              ">
+            </figure>
+              <div class="media-body">
+                <h5 class="mb-1">Share Your Experience</h5>
+                <p class="mb-0">Provide Recommendations</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-lg-3">
+            <div class="media">
+            <figure class="figure">
+              <img class="img-fluid align-self-center" src="{{ ('/public') }}/front-assets/images/icon/hands-helping.png" alt="shield-check
+              ">
+            </figure>
+              <div class="media-body">
+                <h5 class="mb-1">Pluckit For Tradies</h5>
+                <p class="mb-0">Connect With Customers</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Section -->
+    <!-- Section -->
+    <section class="section three-columns">
+      <div class="container">
+        <div class="section-head">
+          <h2 class="heading-style">How Pluckit Works</h2>
+<!--           <h5>"89% of people now check recommendations before buying" - Trustpilot 2020.</h5>
+          <p>Times are changing and we've taken this one step further. Socially-connecting people to provide more familiar, personalised recommendations to make more educated decisions.</p> -->
+          <p>Pluckit is the new type of social network for finding Tradies. A greater, more connected platform to leverage personalised referrals & recommendations suggested by people you know to hire reliable and trusted Tradies.</p>
+        </div>
+        <div class="row text-center slideshow owl-carousel owl-theme d-sm-flex mx-0 mb-3 mb-sm-5">
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image2.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>1. LOGIN USING SOCIAL MEDIA & IMPORT FRIENDLIST</h6>
+                <p>Utilise your already-established network of people to uncover recommended Tradies</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow shape-bottom">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image1.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>2. SEARCH FOR A TRADIE</h6>
+                <p>Search and discover. Save time, money and the hassle and pluck the right Tradie from the start.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow shape-right">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image3.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>3. SELECT FROM FRIEND’S RECOMMENDATIONS</h6>
+                <p>Choose your trusted Tradie from the ranked recommendations provided by your network.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-sm-right">
+          <!-- <a href="{{ url('signup') }}" class="btn btn-primary">Pluck a Tradie</a> -->
+        <a href="#" class="btn btn-primary scrollTopHome">Pluck a Tradie</a>
+        </div>
+      </div>
+    </section>
+    <!-- /Section-->
+    <!-- Section -->
+    <section class="section bg-primary text-center success-story overlay">
+      <div class="container">
+        <h4 class="mb-5 position-relative">We help more Australians complete more jobs every day</h4>
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-4">
+            <h3>{{ number_format($getBusinessCount) }}</h3>
+            <p>Professional Tradies Australia Wide</p>
+          </div>
+          <div class="col-md-4">
+            <h3>Recommended Tradies</h3>
+            <p>From People You Know</p>
+          </div>
+          <div class="col-md-4">
+            <h3>{{ number_format($getCustomerReviewCount) }}</h3>
+            <p>Customer Recommendations</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- /Section-->
+    <!-- Section -->
+    <section class="section three-columns">
+      <div class="container">
+        <h2 class="heading-style">Who Is Using Pluckit</h2>
+        <div class="row text-center slideshow owl-carousel owl-theme d-sm-flex mx-0 mb-3 mb-sm-5">
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image5.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>1. TRADIES</h6>
+                <p>Verified, registered, licensed Tradies of all shapes and sizes.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow shape-bottom">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image6.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>2. CUSTOMERS</h6>
+                <p>Join thousands of everyday Australians finding and recommending reliable, pluckin’ Tradies.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4">
+            <div class="box bg-gray-light box-shadow shape-yellow shape-right">
+              <figure class="figure">
+                <img class="img-fluid" src="{{ ('/public') }}/front-assets/images/image7.png" alt="">
+              </figure>
+              <div class="box-content">
+                <h6>3. EVERYONE</h6>
+                <p>It’s a match for all. Helping to gain back control online for both Tradies and Customers.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center text-sm-right">
+          <a href="{{ url('business/user/signup') }}" class="btn btn-primary">Become a Pluckit Tradie</a>
+        </div>
+      </div>
+    </section>
+    <!-- /Section-->
+
+    <!-- Recommendations -->
+    <section class="section recommendations promo-bg">
+      <div class="container">
+        <h2 class="heading-style alt">Latest Recommendations</h2>
+        <div class="row slideshow owl-carousel owl-theme d-sm-flex mx-0">
+        @if(!empty($latestReview))
+
+       @foreach($latestReview as $getBusiness)
+       <div class="col-sm-6 col-md-6 col-lg-4">
+             <div class="card border-0 hover-styled">
+             <figure class="figure m-4 text-center divider">
+                 <a href="{{ !empty($getBusiness->business_slug) ? url('business').'/'.$getBusiness->business_slug : '#' }}">
+                 @if(!empty($getBusiness->business_image))
+                   <img src="{{ $getBusiness->business_image }}" class="card-img-top" alt="Image">
+                 @else
+                 <img src="{{ ('/public') }}/front-assets/images/default-image.jpg" class="card-img-top" alt="Image">
+                 @endif
+                 </a>
+             </figure>
+               <div class="card-body pb-0">
+                 <div class="rating text-right">
+                   <small>RATING</small>
+                   <ul class="list-unstyled">
+                     <li><a href="#"><i class="
+               <?php
+               if($getBusiness->rating == 0) {
+                 echo 'fa fa-star text-gray';
+               }else	{
+                if($getBusiness->rating > 0 && $getBusiness->rating < 1){
+                  echo 'fa fa-star-half-alt';
+                }else{
+                  echo 'fa fa-star';
+                }
+               }
+             ?>
+             "></i></a></li>
+                          <li><a href="#"><i class="
+              <?php
+              if($getBusiness->rating > 1 && $getBusiness->rating < 2){
+                echo 'fa fa-star-half-alt';
+              }else{
+                if($getBusiness->rating >= 2){
+                 echo 'fa fa-star';
+                }else{
+                  echo 'fa fa-star text-gray';
+                }
+              }
+              ?>
+              "></i></a></li>
+               <li><a href="#"><i class="
+               <?php
+               if($getBusiness->rating > 2 && $getBusiness->rating < 3){
+                 echo 'fas fa-star-half-alt';
+               }else{
+                 if($getBusiness->rating >= 3){
+                 echo 'fa fa-star';
+                 }else{
+                   echo 'fa fa-star text-gray';
+                 }
+               }
+               ?>"></i></a></li>
+               <li><a href="#"><i class="
+               <?php
+               if($getBusiness->rating > 3 && $getBusiness->rating < 4){
+                 echo 'fa fa-star-half-alt';
+               }else{
+                 if($getBusiness->rating >= 4){
+                 echo 'fa fa-star';
+                 }else{
+                 echo 'fa fa-star text-gray';
+                 }
+               }
+               ?>"></i></a></li>
+               <li><a href="#"><i class="
+               <?php if($getBusiness->rating > 4 && $getBusiness->rating < 5){
+                 echo 'fa fa-star-half-alt';
+               }else{
+                 if($getBusiness->rating >= 5){
+                 echo 'fa fa-star';
+                 }else{
+                 echo 'fa fa-star text-gray' ;
+                 }
+               };?>"></i></a></li>
+                   </ul>
+                 </div>
+                 @php $str =  "The user didn't write a review, and has left just a rating."; @endphp
+                         <h5><a href="{{ !empty($getBusiness->business_slug) ? url('business').'/'.$getBusiness->business_slug : '#' }}">{{ $getBusiness->business_name }}</a></h5>
+                         <p>
+                 {{ (!empty($getBusiness->review_text) && (strlen($getBusiness->review_text) > 120)) ? substr($getBusiness->review_text,0,120).'...' : $getBusiness->review_text }}
+                 </p>
+               </div>
+               <div class="card-footer border-0 bg-white px-3 pt-0">
+               <div class="row justify-content-center align-items-center">
+                 <div class="col-6 user-info">
+                           <a href="{{ !empty($getBusiness->business_slug) ? url('business').'/'.$getBusiness->business_slug : '#' }}">
+                   @if(!empty($getBusiness->user_image))
+                             <img class="img-fluid avatar" src="{{ $getBusiness->user_image }}" alt="Image">
+                     @else
+                     <img class="img-fluid avatar" src="{{ ('/public') }}/front-assets/images/img1.jpg" alt="Image">
+                     @endif
+                     By {{ !empty($getBusiness->user_name) ? $getBusiness->user_name : '---' }}
+                   </a>
+                 </div>
+                 <div class="col-6 category text-right">
+                   <a href="{{ url('/search?cat='.$getBusiness->category_name.'&hid_type=category'.'&parent_cat='.$getBusiness->parent_category.'&catval='.$getBusiness->category_id)}}">{{ !empty($getBusiness->category_name) ? $getBusiness->category_name : '---' }}</a>
+                 </div>
+                 </div>
+               </div>
+             </div>
+             </div>
+
+
+       @endforeach
+      @endif
+
+      </div>
+    </section>
+    <!-- /Recommendations -->
+	<!-- Section -->
+    <section class="section categories">
+      <div class="container">
+        <h2 class="heading-style">Categories</h2>
+			@if(!empty($categories[0]))
+        <div class="row mb-lg-5">
+
+			@php $i=1; @endphp
+		 @foreach($categories as $category)
+
+          <div class="col-6 col-md-6 col-lg-3">
+            <div class="card border-0 card-hover">
+			<a href="{{ url('/search?cat='.$category->name.'&hid_type=category'.'&parent_cat='.$category->name.'&catval='.$category->id)}}">
+			@if(!empty($category->category_image))
+              <img class="card-img-top rounded-1" src="{{ $category->category_image }}" alt="Image">
+		    @else
+			  <img class="card-img-top rounded-1" src="{{ ('/public') }}/front-assets/images/default-image.jpg" alt="Image">
+			@endif
+			</a>
+              <div class="card-body pt-3 p-0">
+                <div class="row">
+                  <div class="col-8 pr-0">
+                    <h5><a href="{{ url('/search?cat='.$category->name.'&hid_type=category'.'&parent_cat='.$category->name.'&catval='.$category->id)}}">{{ $category->name }}</a></h5>
+                    <div class="rating d-flex justify-content-start align-items-center">
+
+                      <ul class="list-unstyled">
+                        <li><a href="#"><i class="fa fa-star"></i></a></li>
+                      </ul>
+                      <div class="reviews ml-sm-2 ml-1">
+                        <span class="hide-on-mobile">
+                          <a href="#">({{ $category->average_views }} recommendations)</a>
+                        </span>
+                        <span class="show-on-mobile">
+                          <a href="#">({{ $category->average_views }}) <br> recommendations </a>
+                        </span>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-4 text-right">
+				          @if(!empty($category->category_icon))
+                    <img class="icon img-fluid" src="{{ $category->category_icon }}" alt="icon">
+                  @else
+                    <img class="icon img-fluid" src="{{ ('/public') }}/front-assets/images/category-default-icon.png" alt="icon">
+                  @endif
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+		  @php unset($arrSubcategoryName); @endphp
+		   @if(($i%4==0) && (count($categories) > $i))
+			  </div>
+
+		  <div class="row mb-lg-5 {{ ($i==8) ?'d-none' : ''}}">
+		  @endif
+		  @php $i=$i+1;@endphp
+		 @endforeach
+		</div>
+	@endif
+        <div class="text-center text-sm-right">
+          <a href="{{ url('/view-categories') }}" class="btn btn-primary">See more categories</a>
+        </div>
+      </div>
+    </section>
+    <!-- Section -->
+	<section class="section bg-primary popular-tradies">
+      <div class="container">
+        <h2 class="heading-style alt">Top Rated Tradies</h2>
+        <div class="row slideshow owl-carousel owl-theme d-sm-flex mx-0">
+        @if(!empty($businessRatedTradies[0]))
+			@foreach($businessRatedTradies as $businessTradies)
+
+      <div class="col-sm-6 col-md-6 col-lg-4">
+			  <div class="card border-0 hover-styled">
+				  <figure class="figure m-4 text-center divider">
+				  <a href="{{ !empty($businessTradies->business_slug) ? url('business').'/'.$businessTradies->business_slug : '#' }}">
+				  @if(!empty($businessTradies->business_image))
+					<img src="{{ $businessTradies->business_image }}" class="img-fluid" alt="Image">
+				  @else
+					<img src="{{ ('/public') }}/front-assets/images/default-image.jpg" class="img-fluid" alt="Image">
+				  @endif
+				  </a>
+				  </figure>
+				  <div class="card-body pb-0">
+					<h5><a href="{{ !empty($businessTradies->business_slug) ? url('business').'/'.$businessTradies->business_slug : '#' }}">{{ $businessTradies->business_name }}</a></h5>
+					<div class="rating d-flex justify-content-start align-items-center mb-3">
+					  <ul class="list-unstyled">
+					  <li><a href="#"><i class="
+						  <?php
+						  if($businessTradies->rating == 0) {
+							  echo 'fa fa-star text-gray';
+						  }else	{
+							 if($businessTradies->rating > 0 && $businessTradies->rating < 1){
+								 echo 'fa fa-star-half-alt';
+							 }else{
+								 echo 'fa fa-star';
+							 }
+						  }
+						?>
+						"></i></a></li>
+                         <li><a href="#"><i class="
+						 <?php
+						 if($businessTradies->rating > 1 && $businessTradies->rating < 2){
+							 echo 'fa fa-star-half-alt';
+						 }else{
+							 if($businessTradies->rating >= 2){
+								echo 'fa fa-star';
+							 }else{
+								 echo 'fa fa-star text-gray';
+							 }
+						 }
+						 ?>
+						 "></i></a></li>
+						  <li><a href="#"><i class="
+						  <?php
+						  if($businessTradies->rating > 2 && $businessTradies->rating < 3){
+							  echo 'fas fa-star-half-alt';
+						  }else{
+							  if($businessTradies->rating >= 3){
+							  echo 'fa fa-star';
+							  }else{
+								  echo 'fa fa-star text-gray';
+							  }
+						  }
+						  ?>"></i></a></li>
+						  <li><a href="#"><i class="
+						  <?php
+						  if($businessTradies->rating > 3 && $businessTradies->rating < 4){
+							  echo 'fa fa-star-half-alt';
+						  }else{
+							  if($businessTradies->rating >= 4){
+							  echo 'fa fa-star';
+							  }else{
+							  echo 'fa fa-star text-gray';
+							  }
+						  }
+						  ?>"></i></a></li>
+						  <li><a href="#"><i class="
+						  <?php if($businessTradies->rating > 4 && $businessTradies->rating < 5){
+							  echo 'fa fa-star-half-alt';
+						  }else{
+							  if($businessTradies->rating >= 5){
+								echo 'fa fa-star';
+							  }else{
+								echo 'fa fa-star text-gray' ;
+							  }
+						  };?>"></i></a></li>
+						</ul>
+					  <div class="reviews ml-sm-2 ml-1">
+						<a href="#">({{ $businessTradies->business_review_count }})</a>
+					  </div>
+					</div>
+					<p>{{ (!empty($businessTradies->review_text) && (strlen($businessTradies->review_text) > 215)) ? substr($businessTradies->review_text,0,215).'...' : $businessTradies->review_text }}</p>
+				  </div>
+          <div class="card-footer border-0 bg-white px-3 pt-0">
+             <div class="row justify-content-center align-items-center">
+                <div class="col-5 location">
+                  <a href="#"><i class="fas fa-map-marker-alt mr-1"></i>{{ !empty($businessTradies->business_city) ? $businessTradies->business_city : '-' }}</a>
+                </div>
+                <div class="col-7 category text-right">
+                  <a href="{{ url('/search?cat='.$businessTradies->category_name.'&hid_type=category'.'&parent_cat='.$businessTradies->category_name.'&catval='.$businessTradies->category_id)}}">{{ !empty($businessTradies->category_name) ? $businessTradies->category_name: '--' }}</a>
+                </div>
+             </div>
+          </div>
+				</div>
+        </div>
+
+			  @endforeach
+		  @endif
+
+
+        </div>
+      </div>
+    </section>
+    <!-- /Section-->
+	<!-- Section -->
+    <section class="section">
+      <div class="container text-center">
+        <h2>Looking to get a job done?</h2>
+          <a href="javascript:;" class="btn btn-primary chk_friend_suggest" data-user-id="{{ ($getUser==0) ? 0 : $getUser }}">Check who your friends suggest<i
+            class="ml-3 fas fa-arrow-circle-right"></i></a>
+      </div>
+    </section>
+    <!-- /Section-->
+  </div>
+  <!-- /content -->
+  @endsection
+ @section('extracontent')
+<script>
+var getlogin = "{{ !empty($get['login']) ? $get['login'] : 0}}";
+if(getlogin == 1){
+$('.btn-login').click();
+var loginUser = "{{ auth()->user()}}";
+if(loginUser!=''){
+	window.location.href = "{{ url('business/user/dashboard')}}";
+}
+}
+$("body").on('keyup', '#categories', function () {
+	$('#hid_type').val('');
+ });
+ $("body").on('keyup', '#categories-top', function () {
+	$('#hid_type_top').val('');
+ });
+ $("body").on('click', '.chk_friend_suggest', function () {
+	 var data_user_id = $(this).attr('data-user-id');
+	 if(data_user_id == 0){
+	    $('.btn-login').click();
+	 }else{
+	    $('html, body').animate({
+			scrollTop: $("#banner").offset().top
+		}, 2000);
+	}
+ });
+ </script>
+@endsection
